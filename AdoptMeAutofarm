@@ -6,6 +6,12 @@ local w = library:CreateWindow("Adopt Me")
 local b = w:CreateFolder("Pet Autofarm")
 b:Toggle("Toggle",function(bool)
     _G.auto = bool
+    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments:GetChildren()) do
+        if v:IsA("ImageButton") and _G.auto then
+            local ailment = v.Name
+            game:GetService("ReplicatedStorage").API["MonitorAPI/AddAdditive"]:FireServer(ailment,1)
+        end
+    end
 end)
 
 b:DestroyGUI()
