@@ -85,14 +85,13 @@ game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.Chi
                     local plr = game.Players.LocalPlayer
                     local location = plr.Character.HumanoidRootPart.CFrame
                     game:GetService("ReplicatedStorage").API["HousingAPI/ActivateFurniture"]:InvokeServer(game:GetService("Players").LocalPlayer,v.Parent.Name,"UseBlock",{["cframe"] = location},workspace.Pets[v2.Name])
-                    game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
                 end
             end
         end
         wait(10)
         game:GetService("ReplicatedStorage").API["HousingAPI/UnsubscribeFromHouse"]:InvokeServer(game:GetService("Players").LocalPlayer)
         game:GetService("ReplicatedStorage").API["LocationAPI/SetLocation"]:FireServer("MainMap",game:GetService("Players").LocalPlayer)
-        
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
     end
 end)
 
@@ -116,6 +115,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.Chi
         game:GetService("ReplicatedStorage").API["LocationAPI/SetLocation"]:FireServer("School",game:GetService("Players").LocalPlayer)
         wait(60)
         game:GetService("ReplicatedStorage").API["LocationAPI/SetLocation"]:FireServer("MainMap",game:GetService("Players").LocalPlayer)
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
     end
 end)
 
