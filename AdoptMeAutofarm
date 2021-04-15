@@ -8,6 +8,8 @@ b:Toggle("Toggle",function(bool)
     _G.auto = bool
 end)
 
+b:DestroyGUI()
+
 game.StarterGui:SetCore("SendNotification", {Title = "Made By Velcori#1570",Text = "Adopt Me Pet Autofarm",Duration = 5,})
 
 local vu = game:GetService("VirtualUser")
@@ -137,4 +139,6 @@ game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.Chi
     end
 end)
 
-b:DestroyGUI()
+while _G.auto do wait(10)
+    game:GetService("ReplicatedStorage").API:FindFirstChild("PayAPI/CashOut"):InvokeServer()
+end
