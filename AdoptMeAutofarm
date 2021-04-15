@@ -43,6 +43,7 @@ end
 --sick
 game.Players.LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(sick)
     if sick.Name == "sick" and _G.auto then
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         game:GetService("ReplicatedStorage").API:FindFirstChild("MonitorAPI/HealWithDoctor"):FireServer()
     end
 end)
@@ -50,6 +51,7 @@ end)
 --thirsty
 game.Players.LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(thirsty)
     if thirsty.Name == "thirsty" and _G.auto then
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         game:GetService("ReplicatedStorage").API["ShopAPI/BuyItem"]:InvokeServer("food","water",{})
         wait(5)
         local tool = game.Players.LocalPlayer.Character.GenericTool:FindFirstChild("unique")
@@ -61,6 +63,7 @@ end)
 --hungry
 game.Players.LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(hungry)
     if hungry.Name == "hungry" and _G.auto then
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         game:GetService("ReplicatedStorage").API:FindFirstChild("ShopAPI/BuyItem"):InvokeServer("food","apple",{})
         wait(5)
         local tool = game.Players.LocalPlayer.Character.GenericTool:FindFirstChild("unique")
@@ -71,6 +74,7 @@ end)
 --shower
 game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(dirty)
     if dirty.Name == "dirty" and _G.auto then
+        game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         game:GetService("ReplicatedStorage").API["HousingAPI/SubscribeToHouse"]:FireServer(game:GetService("Players").LocalPlayer)
         wait(15)
         game:GetService("ReplicatedStorage").API["HousingAPI/SubscribeToHouse"]:FireServer(game:GetService("Players").LocalPlayer)
@@ -95,6 +99,7 @@ end)
 --sleepy
 game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(sleepy)
     if sleepy.Name == "sleepy" and _G.auto then
+    game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         for i,v in pairs(game:GetService("Workspace").Pets:GetChildren()) do
             local plr = game.Players.LocalPlayer
             game:GetService("ReplicatedStorage").API["HousingAPI/ActivateInteriorFurniture"]:InvokeServer("F-4","UseBlock",{["cframe"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame},workspace.Pets[v.Name])
@@ -107,6 +112,7 @@ end)
 --school
 game:GetService("Players").LocalPlayer.PlayerGui.AilmentsMonitorApp.Ailments.ChildAdded:Connect(function(school)
     if school.Name == "school" and _G.auto then
+    game:GetService("ReplicatedStorage").API:FindFirstChild("AdoptAPI/EjectBaby"):FireServer(workspace.Pets:FindFirstChild("HumanoidRootPart", true).Parent)
         game:GetService("ReplicatedStorage").API["LocationAPI/SetLocation"]:FireServer("School",game:GetService("Players").LocalPlayer)
         wait(60)
         game:GetService("ReplicatedStorage").API["LocationAPI/SetLocation"]:FireServer("MainMap",game:GetService("Players").LocalPlayer)
